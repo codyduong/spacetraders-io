@@ -83,7 +83,7 @@ export class SpaceTraders {
   }
 
   viewAvailableLoans() {
-    const url = 'game/loans'
+    const url = '/game/loans'
 
     return this.makeAuthRequest<AvailableLoanResponse>(url, 'get')
   }
@@ -95,7 +95,7 @@ export class SpaceTraders {
   }
 
   takeOutLoan(type: LoanType) {
-    const url = this.makeUserPath('/loans')
+    const url = this.makeUserPath('loans')
     const payload = { type }
 
     return this.makeAuthRequest<AccountResponse>(url, 'post', payload)
