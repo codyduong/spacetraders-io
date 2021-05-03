@@ -1,4 +1,4 @@
-import { SpaceTraders } from "./index"
+import { SpaceTraders } from "../src/index"
 
 const spaceTraders = new SpaceTraders()
 
@@ -28,7 +28,7 @@ for (const functionName of functionNames) {
   if (blacklistSet.has(functionName)) continue
   // @ts-ignore: It doesn't like when I access the functions using [].
   let fn = spaceTraders[functionName]
-  test(`${functionName} url is valid`, () => {
+  test(`${functionName} url validation`, () => {
     expect(isUrlValid(fn)).toBe(true)
   })
 }
